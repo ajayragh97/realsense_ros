@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="imu_filter_madgwick" type="imu_filter_node" name="ImuFilter">
+        <param name="use_mag" type="bool" value="false" />
+        <param name="_publish_tf" type="bool" value="true" />
+        <param name="_world_frame" type="string" value="enu" />
+        <param name="fixed_frame" type="string" value="camera_link" />
+        <param name="remove_gravity_vector" type="bool" value="true" />
+        <remap from="/imu/data_raw" to="/camera/imu"/>
+    </node>
+</launch>
